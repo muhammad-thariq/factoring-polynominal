@@ -1,13 +1,13 @@
-import numpy as np
 """
-f(x)|   1       -3      -13     15
+f(x)|   x(0)    x(1)    x(2)    x(n)
     |
     |_______________________________
         h(0)    h(1)    h(n)    s(x)
 """
-
 faktor = []
-x = [1,-3,-13,15]
+
+x = [2, -3, -2]
+# x = [x(0),x(1),x(2)]
 
 n = x[len(x)-1]
 if n >= 0:
@@ -23,20 +23,16 @@ for i in range(1, n+1):
         faktor.append(neg)
 
 for z in range (len(faktor)):
-        faktor1 = []
-        faktor1.append(faktor[z])
 
-        h = []
-        for n in range(len(faktor1)):
-            for i in range(len(x)):
-                if i == 0:
-                    h.append(x[0])
-                elif i > 0:
-                    h.append(h[i-1]*faktor1[n]+x[i])
+    faktor1 = []
+    faktor1.append(faktor[z])
 
-        arr = np.array(h)
-        p = len(faktor1)
-        newarr = np.array_split(h,p)
+    h = []
+    for n in range(len(faktor1)):
+        for i in range(len(x)):
+            if i == 0:
+                h.append(x[0])
+            elif i > 0:
+                h.append(h[i-1]*faktor1[n]+x[i])
 
-        for i in range(len(newarr)):
-            print("hasil bagi :",newarr[i],"\t:",faktor1[i],"(faktor)")
+    print("hasil bagi {} dengan faktor [{}]".format(h,faktor[z]))        
