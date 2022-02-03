@@ -1,13 +1,14 @@
 """
-f(x)|   x(0)    x(1)    x(2)    x(n)
+k(0)x^3 + k(1)x^2 + k(2)x^1 + k(n) 
+f(x)|   k(0)    k(1)    k(2)    k(n)
     |
     |_______________________________
         h(0)    h(1)    h(n)    s(x)
 """
 faktor = []
-
 x = [2, -3, -2]
-# x = [x(0),x(1),x(2)]
+# x = [k(0),k(1),k(2)]
+
 
 n = x[len(x)-1]
 if n >= 0:
@@ -35,4 +36,4 @@ for z in range (len(faktor)):
             elif i > 0:
                 h.append(h[i-1]*faktor1[n]+x[i])
 
-    print("hasil bagi {} dengan faktor [{}]".format(h,faktor[z]))        
+    print("hasil bagi {} dengan faktor [{}]".format(h,faktor[z]))
