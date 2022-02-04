@@ -7,7 +7,7 @@ f(x)|   k(0)    k(1)    k(2)    k(n)
 """
 faktor = []
 x = [1,4,1,-6]
-# x = [k(0),k(1),k(2)] with k(n) != 0
+# x = [k(0),k(1),k(2),k(n)] with k(n) != 0
 
 n = x[len(x)-1]
 if n >= 0:
