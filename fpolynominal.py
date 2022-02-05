@@ -1,14 +1,14 @@
 """
 k(0)x^3 + k(1)x^2 + k(2)x^1 + k(n) 
 f(x)|   k(0)    k(1)    k(2)    k(n)
-    |
     |_______________________________
         h(0)    h(1)    h(n)    s(x)
 """
+
 faktor = []
 x = [1,4,1,-6]
-# x = [k(0),k(1),k(2),k(n)] with k(n) != 0
-
+# x = [k(0),k(1),k(2),k(n)]
+# k(n) != 0
 n = x[len(x)-1]
 if n >= 0:
     pass
@@ -23,10 +23,8 @@ for i in range(1, n+1):
         faktor.append(neg)
 
 for z in range (len(faktor)):
-
     faktor1 = []
     faktor1.append(faktor[z])
-
     h = []
     for n in range(len(faktor1)):
         for i in range(len(x)):
@@ -35,4 +33,20 @@ for z in range (len(faktor)):
             elif i > 0:
                 h.append(h[i-1]*faktor1[n]+x[i])
 
-    print("hasil bagi {} dengan faktor [{}]".format(h,faktor[z]))
+    if h[len(h)-1] == 0:
+        s = "(faktor)"
+    else:
+        s = ""
+    print("hasil bagi {} dengan f(x) [{}] {}".format(h,faktor[z],s))
+
+""" 
+output
+hasil bagi [1, 5, 6, 0] dengan f(x) [1] (faktor)
+hasil bagi [1, 3, -2, -4] dengan f(x) [-1] 
+hasil bagi [1, 6, 13, 20] dengan f(x) [2]
+hasil bagi [1, 2, -3, 0] dengan f(x) [-2] (faktor)
+hasil bagi [1, 7, 22, 60] dengan f(x) [3]
+hasil bagi [1, 1, -2, 0] dengan f(x) [-3] (faktor)
+hasil bagi [1, 10, 61, 360] dengan f(x) [6]
+hasil bagi [1, -2, 13, -84] dengan f(x) [-6]
+"""
