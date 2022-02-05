@@ -40,7 +40,7 @@ for z in range (len(faktor)):
     print("hasil bagi {} dengan f(x) [{}] {}".format(h,faktor[z],s))
 
 """ 
-output
+stdout
 hasil bagi [1, 5, 6, 0] dengan f(x) [1] (faktor)
 hasil bagi [1, 3, -2, -4] dengan f(x) [-1] 
 hasil bagi [1, 6, 13, 20] dengan f(x) [2]
