@@ -8,7 +8,7 @@ faktor = []
 x = [1,4,1,-6]
 # x = [k(0),k(1),k(2),k(n)]
 # k(n) != 0
-n = x[len(x)-1]
+n = x[-1]
 
 if n >= 0:
     pass
@@ -32,7 +32,7 @@ for z in range (len(faktor)):
                 h.append(x[0])
             elif i > 0:
                 h.append(h[i-1]*faktor1[n]+x[i])
-    if h[len(h)-1] == 0:
+    if h[-1] == 0:
         s = "(faktor)"
     else:
         s = ""
