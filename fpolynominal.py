@@ -7,37 +7,42 @@ f(x)|   k(0)    k(1)    k(2)    k(n)
 faktor = []
 x = [1,4,1,-6]
 # x = [k(0),k(1),k(2),k(n)]
-# k(n) != 0
 n = x[-1]
 
-if n >= 0:
-    pass
-elif n < 0:
-    n = n*-1
+def m():
+    if n >= 0:
+        pass
+    elif n < 0:
+        n = n*-1
 
-for i in range(1, n+1):
-    if n % i == 0:
-        posv = i
-        neg = i*-1
-        faktor.append(posv)
-        faktor.append(neg)
+    for i in range(1, n+1):
+        if n % i == 0:
+            posv = i
+            neg = i*-1
+            faktor.append(posv)
+            faktor.append(neg)
 
-for z in range (len(faktor)):
-    faktor1 = []
-    faktor1.append(faktor[z])
-    h = []
-    for n in range(len(faktor1)):
-        for i in range(len(x)):
-            if i == 0:
-                h.append(x[0])
-            elif i > 0:
-                h.append(h[i-1]*faktor1[n]+x[i])
-    if h[-1] == 0:
-        s = "(faktor)"
-    else:
-        s = ""
-        
-    print("hasil bagi {} dengan f(x) [{}] {}".format(h,faktor[z],s))
+    for z in range (len(faktor)):
+        faktor1 = []
+        faktor1.append(faktor[z])
+        h = []
+        for n in range(len(faktor1)):
+            for i in range(len(x)):
+                if i == 0:
+                    h.append(x[0])
+                elif i > 0:
+                    h.append(h[i-1]*faktor1[n]+x[i])
+        if h[-1] == 0:
+            s = "(faktor)"
+        else:
+            s = ""
+        print("hasil bagi {} dengan f(x) [{}] {}".format(h,faktor[z],s))
+    
+if x[-1] == 0:
+    x = x[:-1]
+    m()
+else:
+    m()
 """ 
 stdout
 hasil bagi [1, 5, 6, 0] dengan f(x) [1] (faktor)
