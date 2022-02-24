@@ -7,9 +7,10 @@ f(x)|   k(0)    k(1)    k(2)    k(n)
 faktor = []
 x = [1,4,1,-6]
 # x = [k(0),k(1),k(2),k(n)]
-n = x[-1]
+    
 
 def m():
+    n = x[-1]
     if n >= 0:
         pass
     elif n < 0:
